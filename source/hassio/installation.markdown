@@ -162,6 +162,17 @@ apt-get update
 apt-get install -y apparmor-utils apt-transport-https avahi-daemon ca-certificates curl dbus jq network-manager socat
 curl -fsSL get.docker.com | sh
 ```
+Debian with already installed docker:
+
+If docker package is already installed in system from debian repository, it must be replaced by docker-ce package. 
+ 1. add manually new docker repository:
+```
+# deb [arch=<arch>] https://download.docker.com/linux/debian <dist> stable
+# exampple for buster/testing 64bit
+deb [arch=amd64] https://download.docker.com/linux/debian buster stable
+```
+ 2. install manually package docker-ce, which uninstall docker package.
+
 
 The following script will then install Hass.io on a variety of operating systems and machine types.
 
